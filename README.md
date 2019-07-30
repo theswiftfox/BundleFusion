@@ -1,4 +1,13 @@
 # BundleFusion
+### Changes:
+
+* Updated project to build on Windows 10 with VS2017 and CUDA 10  
+* added support for Realsense D435i  
+
+You may have to change the Linkerpath to the Realsense SDK on your machine if it differs from the default path. 
+
+
+### Original Reame:
 
 ![BundleFusion](img/teaser.jpg)
 
