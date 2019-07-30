@@ -149,7 +149,9 @@
     <ClCompile Include="Source\KinectOneSensor.cpp">
       <Filter>Sensors</Filter>
     </ClCompile>
-    <ClCompile Include="Source\RealsenseSensor.cpp" />
+    <ClCompile Include="Source\RealsenseSensor.cpp">
+      <Filter>Sensors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\FriedLiver.h" />
@@ -400,7 +402,9 @@
     <ClInclude Include="Source\KinectOneSensor.h">
       <Filter>Sensors</Filter>
     </ClInclude>
-    <ClInclude Include="Source\RealsenseSensor.h" />
+    <ClInclude Include="Source\RealsenseSensor.h">
+      <Filter>Sensors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="DXUT">

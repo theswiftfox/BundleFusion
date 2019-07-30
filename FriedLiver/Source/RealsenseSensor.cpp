@@ -25,7 +25,9 @@ RealsenseSensor::RealsenseSensor() : alignToDepth(RS2_STREAM_DEPTH)
 	//auto colorExtr = colorStream.get_extrinsics_to(depthStream);
 	auto colorIntr = colorStream.get_intrinsics();
 	resDepth = std::make_pair(depthStream.width(), depthStream.height());
-	resColor = std::make_pair(colorStream.width(), colorStream.height());
+	//resColor = std::make_pair(colorStream.width(), colorStream.height());
+	// aligned color has same res as depth!
+	resColor = resDepth;
 
 	RGBDSensor::init((uint32_t)resDepth.first, (uint32_t)resDepth.second, (uint32_t)resColor.first, (uint32_t)resColor.second);
 
@@ -60,7 +62,7 @@ bool RealsenseSensor::processDepth()
 		for (auto y = 0u; y < (uint32_t)resDepth.second; ++y) {
 			for (auto x = 0u; x < (uint32_t)resDepth.first; ++x) {
 				auto idx = y * (uint32_t)resDepth.first + x;
-				depthBuff[idx] = (float)dataPtr[idx] * 0.001f; // scale like in kinectsensor.cpp
+				depthBuff[idx] = (float)dataPtr[idx] * 0.001f; // default depth scale in realsense is 1 mm
 			}
 		}
 		return true;
@@ -78,11 +80,13 @@ bool RealsenseSensor::processColor()
 		uchar* colorBuff = (uchar*)getColorRGBX();
 
 		const auto* dataPtr = (uint8_t*)aligned.get_data();
-		for (auto idx = 0u; idx < (uint32_t)(resColor.first * resColor.second) * 3u; idx += 4) {
-				colorBuff[idx] = dataPtr[idx];
-				colorBuff[idx + 1] = dataPtr[idx + 1];
-				colorBuff[idx + 2] = dataPtr[idx + 2];
-				colorBuff[idx + 3] = 0u;
+		for (auto idx = 0u; idx < (uint32_t)(resColor.first * resColor.second); ++idx) {
+				colorBuff[0] = dataPtr[0];
+				colorBuff[1] = dataPtr[1];
+				colorBuff[2] = dataPtr[2];
+				colorBuff[3] = 0u;
+				colorBuff += 4u;
+				dataPtr += 3u;
 		}
 		return true;
 	//}
