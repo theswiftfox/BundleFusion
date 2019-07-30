@@ -70,7 +70,7 @@ RGBDSensor* getRGBDSensor()
 #ifdef REAL_SENSE
 		//static RealSenseSensor s_realSenseSensor;
 		//return &s_realSenseSensor;
-		g_sensor = RealSenseSensor;
+		g_sensor = new RealsenseSensor;
 		return g_sensor;
 #else
 		throw MLIB_EXCEPTION("Requires Real Sense SDK and REAL_SENSE macro");

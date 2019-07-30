@@ -23,7 +23,7 @@
 #endif
 #endif
 
-#ifdef REAL_SENSE
+#ifdef REAL_SENSE_OLD
 #ifdef _DEBUG
 #pragma comment(lib, "libpxc_d.lib")
 #pragma comment(lib, "libpxcutils_d.lib")
@@ -44,6 +44,7 @@
 #include "PrimeSenseSensor.h"
 #include "KinectSensor.h"
 #include "KinectOneSensor.h"
+#include "RealsenseSensor.h"
 #include "StructureSensor.h"
 #include "SensorDataReader.h"
 

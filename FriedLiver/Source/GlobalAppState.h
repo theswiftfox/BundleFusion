@@ -5,7 +5,7 @@
 //#define OPEN_NI
 #define BINARY_DUMP_READER
 //#define INTEL_SENSOR
-//#define REAL_SENSE
+#define REAL_SENSE
 #define STRUCTURE_SENSOR
 #define SENSOR_DATA_READER
 
