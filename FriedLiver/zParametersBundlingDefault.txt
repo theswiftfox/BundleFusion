@@ -27,7 +27,7 @@ s_denseDepthMin = 0.5f;
 s_denseDepthMax = 4.0f;
 s_denseOverlapCheckSubsampleFactor = 4;
 
-s_maxNumImages = 1200;
+s_maxNumImages = 300;
 s_submapSize = 10;
 s_maxNumKeysPerImage = 1024;
 

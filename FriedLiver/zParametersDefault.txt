@@ -46,7 +46,7 @@ s_SDFIntegrationWeightMax = 99999999;	//maximum integration weight for a voxel
 // s_SDFBlockSize is pound defined (SDF_BLOCK_SIZE)
 // s_hashBucketSize is pound defined (HASH_BUCKET_SIZE)
 s_hashNumBuckets = 800000;				//smaller voxels require more space
-s_hashNumSDFBlocks = 200000;//100000;	//smaller voxels require more space
+s_hashNumSDFBlocks = 75000; //100000;//200000;	//smaller voxels require more space
 s_hashMaxCollisionLinkedListSize = 7;
 
 // raycast
